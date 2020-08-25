@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "herobanner_homes",
+  "info": {
+    "name": "herobanner home"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Welcome to Highrock"
+    },
+    "ctaText": {
+      "type": "string",
+      "required": true,
+      "default": "Get Started"
+    },
+    "ctaLink": {
+      "type": "string",
+      "required": true,
+      "default": "/contact/"
+    },
+    "subTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Capital Management"
+    },
+    "secondTitle": {
+      "type": "string",
+      "required": true,
+      "default": "High Rock"
+    }
+  }
+}

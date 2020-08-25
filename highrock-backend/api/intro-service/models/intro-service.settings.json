@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "intro_services",
+  "info": {
+    "name": "Intro Service"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subTitle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

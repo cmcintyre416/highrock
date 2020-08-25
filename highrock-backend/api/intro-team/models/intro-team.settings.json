@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "intro_teams",
+  "info": {
+    "name": "Intro Team"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Our highly qualified & disciplined investment team delivers consistent results.",
+      "required": true
+    },
+    "subTitle": {
+      "type": "string",
+      "default": "Meet the team",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

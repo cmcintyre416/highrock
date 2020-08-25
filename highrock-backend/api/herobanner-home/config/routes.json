@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/herobanner-home",
+      "handler": "herobanner-home.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/herobanner-home",
+      "handler": "herobanner-home.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/herobanner-home",
+      "handler": "herobanner-home.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
