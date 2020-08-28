@@ -5,7 +5,7 @@ const contact = () => {
   return <Layout>
     <section className="contact-page">
       <article className="contact-form">
-        <h3>Get In Touch</h3>
+        <h1>Get in contact</h1>
         {/* This form will be using formspree */}
         <form action="" method="POST">
           <div className="form-group">

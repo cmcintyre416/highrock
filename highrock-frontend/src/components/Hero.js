@@ -19,8 +19,8 @@ const Hero = () => {
   const data = useStaticQuery(query);
   const herobanner = data.strapiHerobannerHome;
 
-  return <header className="hero section-center" style={{backgroundImage: "url(" + heroImg + ")"}}>
-    <div className="section-center hero-center">
+  return <header className="hero" style={{backgroundImage: "url(" + heroImg + ")"}}>
+    <div className="section-center-narrow hero-center">
       <article className="hero-image"></article>
       <div>
         <h4>{herobanner.subTitle}</h4>

@@ -2,51 +2,28 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Intro from "../components/Intro"
+import ServiceList from "../components/ServiceList"
 
 const query = graphql`
-  {
-    allStrapiServices {
-      nodes {
-        id
-        title
-        description
-        slug
-      }
-    }
-    strapiIntroService {
-      title
-      subTitle
-      description
-    }
+{
+  strapiIntroService {
+    title
+    subTitle
+    description
   }
+}
 `;
 
 const Services = () => {
   const data = useStaticQuery(query);
-  const {
-    allStrapiServices: { nodes: services },
-    strapiIntroService
-  } = data;
+  const { strapiIntroService } = data;
   return <Layout>
     <div className="section-center-narrow">
       <Intro data={strapiIntroService}/>
     </div>
-    <section className="services-page section-padding section-color-gray">
-    <div className="section-center-narrow">
-      {services.map((service, index)=> {
-          return <article key={service.id} className="service" id={service.title}>
-            <Link to={`/services/${service.slug}`}>
-              <h2>
-                <span className="service-number">
-                  <span>
-                  {index + 1}
-                  </span>
-                </span>{service.title}
-                </h2>
-            </Link>
-            <p>{service.description}</p>
-          </article>
-        })}
+    <section className="services-page section-color-gray">
+    <div className="section-center-narrow section-padding">
+     <ServiceList/>
     </div>
     </section>
   </Layout>

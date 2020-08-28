@@ -1,9 +1,9 @@
 import React from "react"
-import logo from "../assets/logo.jpg"
+import logo from "../assets/logo.png"
 import { FaAlignRight } from "react-icons/fa"
 import PageLinks from "../constants/links"
-const Navbar = ({toggleSidebar}) => {
-  return <nav className="navbar">
+const Navbar = ({toggleSidebar, navVersion}) => {
+  return <nav className={`navbar nav-${navVersion}`}>
     <div className="nav-center">
       <div className="nav-header">
         <a href="/">

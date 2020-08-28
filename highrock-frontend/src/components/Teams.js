@@ -8,7 +8,9 @@ const Teams = ({team,title,showLink,list}) => {
   console.log(team);
   return (
     <section className="section teams section-center">
-      <Title title={title}/>
+      <div className="title-margin">
+        <Title title={title}/>
+      </div>
       <div className="teams-center">
         {
           !list &&

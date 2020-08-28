@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
+import BackLink from "../components/BackLink"
 import SEO from "../components/SEO"
 
 const ComponentName = ({data}) => {
@@ -9,8 +10,9 @@ const ComponentName = ({data}) => {
 
   return <Layout>
     <SEO title={title} description={description}/>
-    <section className="blog-template">
-      <div className="section-center">
+    <section className="blog-post section-center-narrow section-padding">
+    <BackLink title="All Posts" page="media"/>
+      <div className="section-center section-padding">
         <article className="blog-content">
           <ReactMarkdown source={content}/>
         </article>
