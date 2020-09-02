@@ -3,6 +3,7 @@ import Title from "./Title"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
+import { motion } from "framer-motion";
 
 const query = graphql`
   {
@@ -38,17 +39,17 @@ const ServiceList = () => {
         </Link>
       </div>
       <div className="services-center">
-        {services.map((service, index)=> {
-          return <article key={service.id} className="service">
-            <Link to={`/services/${service.slug}`} className="service-btn">
-              <p>{service.description}</p>
-              {
-                service.icon &&
-                <Image fluid={service.icon.childImageSharp.fluid} className="service-icon"/>
-              }
-              <h4>{service.title}</h4>
-            </Link>
-          </article>
+        {services.map((service)=> {
+          return <motion.article whileHover={{ scale: 1.1 }} whileTap={{ scale: 1}} key={service.id} className="service">
+              <Link to={`/services/${service.slug}`} className="service-btn">
+                <p>{service.description}</p>
+                {
+                  service.icon &&
+                  <Image fluid={service.icon.childImageSharp.fluid} className="service-icon"/>
+                }
+                <h4>{service.title}</h4>
+              </Link>
+          </motion.article>
         })}
       </div>
     </div>

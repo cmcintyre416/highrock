@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown"
 import SEO from "../components/SEO"
 import Intro from "../components/Intro"
 import Histories from "../components/Histories"
+import ParallaxContainer from "../components/ParallaxContainer"
 
 const About = ({
   data: {
@@ -16,15 +17,17 @@ const About = ({
   return <Layout>
     <SEO title="about" description="About highrock capital"/>
     <div className="section-center-narrow">
-      <Intro data={intro}/>
+        <Intro data={intro}/>
     </div>
-    <section className="section-color-gray">
-      <div className="about-page section-center-narrow section-padding">
-          <article className="about-text">
-            <ReactMarkdown source={info}/>
-          </article>
-      </div>
-    </section>
+    <ParallaxContainer>
+      <section className="section-color-gray">
+        <div className="about-page section-center-narrow section-padding">
+            <article className="about-text">
+              <ReactMarkdown source={info}/>
+            </article>
+        </div>
+      </section>
+    </ParallaxContainer>
     <section className="section-center-narrow section-padding">
       <Histories/>
     </section>

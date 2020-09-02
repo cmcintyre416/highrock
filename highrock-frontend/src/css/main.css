@@ -15,6 +15,7 @@ Variables
   /* dark shades of primary color*/
   /* --clr-primary-1: hsl(43, 86%, 17%); */
   --clr-primary-1: #333;
+  --clr-primary-1-clear: rgba(51, 51, 51, 0.425);
   --clr-primary-2: hsl(38, 90%, 60%);
   --clr-primary-3: hsl(185, 81%, 29%);
   --clr-primary-4: hsl(184, 77%, 34%);
@@ -186,6 +187,10 @@ strong {
   max-width: 1300px;
 }
 
+.position-relative {
+  position: relative;
+}
+
 .section-center-narrow {
   width: 80vw;
   margin: 0 auto;
@@ -313,8 +318,26 @@ Navbar
   background: transparent;
 }
 
-.nav-absolute{
+.nav-absolute .nav-header img, .nav-undefined .nav-header img {
+  transition: 0.3s ease-in-out;
+}
+
+.nav-absolute {
   position: absolute;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+}
+
+.sticky {
+  z-index: 200;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.158);
+}
+
+.sticky .nav-header img {
+  transform: scale(0.8);
+  transition: 0.3s ease-in-out;
 }
 
 .nav-header {
@@ -757,8 +780,6 @@ Services
 
 .service:hover {
   background-color: var(--clr-grey-2);
-  transform: scale(1.03);
-  transition: 0.2 ease;
 }
 
 .service:hover p {
@@ -792,7 +813,11 @@ Services
   text-align: center;
   max-width: 500px;
   margin: 0 auto;
+}
 
+.service-template .service {
+  padding: 20px;
+  margin: 100px 0;
 }
 
 /*
@@ -1341,10 +1366,20 @@ History
   letter-spacing: 1px;
 }
 
+.histories-container {
+  overflow: hidden;
+  min-height: 50vh;
+  max-height: 50vh;
+  display: flex;
+}
+
 .histories .histories-container .history {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  transition: 1s ease-in;
+  min-width: 100%;
 }
 
 .history-text, .history-photo {
@@ -1358,7 +1393,8 @@ History
 .control-panel {
   position: absolute;
   top: 0px;
-  right: 0px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: flex-end;
 }
@@ -1513,3 +1549,13 @@ Blog Template
   padding-top: 0rem;
 }
 
+/* PROGRESS ICON */
+.progress-icon {
+  position: absolute;
+  right: 30px;
+  top: calc(100% + 30px);
+  width: 80px;
+  height: 80px;
+}
+
+/* Parallax */
