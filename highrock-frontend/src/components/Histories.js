@@ -45,13 +45,12 @@ const Histories = () => {
 
   return <div className="histories">
     <div className="history-title">
-      <Title title="history"/><span>- </span><h4>{currentHistory.subTitle}</h4>
+      <Title title="history"/><span className="control-panel-counter">{activeHistory + 1} / {histories.length}</span><span>- </span><h4>{currentHistory.subTitle}</h4>
     </div>
     <div className="histories-container">
       <History history={currentHistory}/>
     </div>
     <div className="control-panel">
-      <span className="control-panel-counter">{activeHistory + 1}/{histories.length}</span>
       {histories.map((history, index) => <button onClick={()=> setActiveHistory(index)} className={`control-circle ${index === activeHistory ? 'active' : ''}`} key={index}><span className="control-panel-tag">{history.subTitle}</span></button>)}
     </div>
   </div>

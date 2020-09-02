@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 
 const Teams = ({team,title,showLink,list}) => {
   const [value, setValue] = React.useState(0);
-  console.log(team);
   return (
     <section className="section teams section-center">
       <div className="title-margin">

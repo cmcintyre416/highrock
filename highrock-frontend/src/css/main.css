@@ -114,6 +114,10 @@ strong {
   font-weight: 600;
 }
 
+.page-content {
+  overflow: hidden;
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -787,11 +791,6 @@ Services
   transition: 0.5s ease;
 }
 
-.service:hover h4 {
-  visibility: hidden;
-  height: 0px;
-}
-
 .services-page h2{
   color: var(--clr-primary-1);
 }
@@ -860,7 +859,6 @@ teams
 }
 .team-info {
   /* min-height: 420px; */
-  flex-grow: 1;
   display: flex;
   align-items: center;
 }
@@ -898,7 +896,7 @@ teams
   flex-direction: row;
 }
 
-.team-page .teams .teams-center a {
+.team-page .teams .teams-center article {
   width: 30%;
 }
 
@@ -1342,14 +1340,10 @@ History
   position: relative;
 }
 
-.history-title{
+.history-title {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-} 
-
-.history {
-  
 }
 
 .history-title span {
@@ -1367,7 +1361,6 @@ History
 }
 
 .histories-container {
-  overflow: hidden;
   min-height: 50vh;
   max-height: 50vh;
   display: flex;
@@ -1392,20 +1385,38 @@ History
 
 .control-panel {
   position: absolute;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 100%;
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .control-panel .control-circle {
-  width: 12px;
-  height: 12px;
-  background-color: #e7e6ec;
-  margin: 5px;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid var(--clr-primary-1);
+  margin: 5px 25px;
+  border-radius: 50%;
   cursor: pointer;
-  border: none;
+}
+
+.control-circle::after {
+  content: "";
+  height: 1px;
+  width: 50px;
+  background-color: var(--clr-primary-1);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.control-circle:last-child::after {
+  display: none;
 }
 
 .control-panel .control-circle.active {
@@ -1427,9 +1438,8 @@ History
 
 .control-panel .control-circle:hover .control-panel-tag {
   position: absolute;
-  top: calc(100% + 10px);
-  left: 0px;
-  right: 0px;
+  bottom: calc(100% + 10px);
+  transform: translateX(-25%);
   display: block;
   text-align: right;
 }
