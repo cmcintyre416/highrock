@@ -6,7 +6,7 @@ import Sticky from 'react-sticky-el';
 import Indicator from "../components/Indicator"
 
 const Navbar = ({toggleSidebar, navVersion}) => {
-    return <nav className={`nav-${navVersion}`}>
+    return <nav className={`nav-${navVersion} nav-main`}>
         <Sticky>
           <div className="nav-center">
             <div className="nav-header">

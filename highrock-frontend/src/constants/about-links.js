@@ -3,29 +3,24 @@ import { Link } from "gatsby"
 const data = [
   {
     id: 1,
-    text: "about us",
-    url: "/about",
+    text: "Intro",
+    url: "/about#intro",
   },
   {
     id: 2,
-    text: "team",
-    url: "/team",
-  },
-  {
-    id: 2,
-    text: "services",
-    url: "/services",
+    text: "History",
+    url: "/about#history",
   },
   {
     id: 3,
-    text: "media",
-    url: "/media",
+    text: "Difference",
+    url: "/about#difference",
   },
   {
     id: 4,
-    text: "contact",
-    url: "/contact",
-  },
+    text: "Other",
+    url: "/about#other",
+  }
 ]
 
 const tempLinks = data.map(link => {

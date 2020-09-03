@@ -33,11 +33,11 @@ const Histories = () => {
   useEffect(() => {
     const timer = setTimeout(()=> {
       if(activeHistory < (histories.length - 1)){
-        setActiveHistory(activeHistory + 1);
+        setActiveHistory(activeHistory + 1)
       }else{
         setActiveHistory(0);
       }
-    },4000);
+    },15000);
     return () => clearTimeout(timer);
   });
 
@@ -48,6 +48,24 @@ const Histories = () => {
       <Title title="history"/><span className="control-panel-counter">{activeHistory + 1} / {histories.length}</span><span>- </span><h4>{currentHistory.subTitle}</h4>
     </div>
     <div className="histories-container">
+      <div className="next" onClick={() => {
+        if(activeHistory < (histories.length - 1)){
+          setActiveHistory(activeHistory + 1);
+        }else{
+          setActiveHistory(0);
+        }
+      }}>
+        {"‣"}
+      </div>
+      <div className="prev" onClick={() => {
+        if(activeHistory > 0){
+          setActiveHistory(activeHistory - 1);
+        }else{
+          setActiveHistory(histories.length - 1);
+        }
+      }}>
+        {"‣"}
+      </div>
       <History history={currentHistory}/>
     </div>
     <div className="control-panel">
