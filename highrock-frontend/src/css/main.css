@@ -84,8 +84,6 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  line-height: 1.25;
-  margin-bottom: 1.5rem;
   font-family: var(--ff-primary);
 }
 h1 {
@@ -128,9 +126,7 @@ strong {
   h3 {
     font-size: 1.75rem;
   }
-  h4 {
-    font-size: 1rem;
-  }
+ 
   body {
     font-size: 1rem;
   }
@@ -322,6 +318,10 @@ Navbar
   background: transparent;
 }
 
+.nav-center {
+  position: relative;
+}
+
 .nav-main, .sticky {
   min-height: 110px;
   max-height: 110px;
@@ -374,6 +374,8 @@ Navbar
   align-items: center;
 }
 
+
+
 .active {
   box-shadow: 0px 2px var(--clr-primary-9);
 }
@@ -382,7 +384,7 @@ Navbar
   box-shadow: 0px 0px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .toggle-btn {
     display: none;
   }
@@ -391,7 +393,11 @@ Navbar
     justify-content: flex-end;
   }
   .nav-links li {
-    margin-right: 2rem;
+    margin-right: 1.5rem;
+  }
+
+  .nav-links li.contact-li {
+    margin-right: 1rem;
   }
 
   .nav-links li:last-child {
@@ -407,8 +413,35 @@ Navbar
     padding: 0.5rem 0;
     font-size: 13px;
   }
+
+  .nav-links a.nav-client-login {
+    padding: 0.75rem 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links a.nav-client-login .fa-user {
+    margin: 3px;
+  }
+
+  .nav-client-login-text {
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    display: block;
+    margin: 0px;
+    line-height: normal;
+  }
+  
   .nav-links a:hover {
     box-shadow: 0px 2px var(--clr-primary-9);
+  }
+  
+  .nav-links a.nav-client-login:hover .nav-client-login-text {
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+    padding-top: 2px;
   }
 
   .nav-links a.contact-cta {
@@ -423,6 +456,7 @@ Navbar
   .nav-links a.contact-cta:hover {
     box-shadow: none;
   }
+  
 
   .nav-center {
     display: flex;
@@ -778,6 +812,7 @@ Services
   max-height: 0px;
   margin: 0 20px;
   overflow: hidden;
+  text-align: center;
 }
 
 .services-center h4 {
@@ -990,91 +1025,6 @@ teams
 }
 
 /*
-=============== 
-Blog
-===============
-*/
-.blog {
-  display: block;
-  margin-bottom: 2rem;
-  background: var(--clr-grey-10);
-  border-radius: var(--radius);
-  box-shadow: var(--light-shadow);
-  transition: var(--transition);
-}
-.blog:hover {
-  box-shadow: var(--dark-shadow);
-  transform: scale(1.02);
-}
-.blog article {
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-.blog-card {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-.blog-img {
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
-  height: 15rem;
-}
-.blog-card {
-  padding: 1.5rem 1rem;
-}
-.blog-card h4 {
-  color: var(--clr-grey-1);
-}
-
-.blog-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.blog-footer p {
-  margin-bottom: 0;
-  font-weight: bold;
-  color: var(--clr-grey-5);
-}
-.blog-footer p:first-of-type {
-  display: inline-block;
-  background: var(--clr-grey-9);
-  color: var(--clr-grey-5);
-  margin-right: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
-}
-
-.blogs-center {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0 -20px;
-}
-
-.blogs-center a {
-  box-shadow: 0px 10px 10px var(--clr-grey-9);
-  margin: 10px 20px;
-  width: calc(33.33% - 40px);
-}
-@media screen and (min-width: 576px) {
-  .blogs-center {
-    display: flex;
-  }
-  .blog-img {
-    height: 17.5rem;
-  }
-}
-@media screen and (min-width: 850px) {
-  .blog-img {
-    height: 13.75rem;
-  }
-}
-
-/*
 ===============
 Footer
 ===============
@@ -1128,6 +1078,10 @@ Footer
 .footer .social-link:hover {
   color: var(--clr-primary-5);
 }
+
+.footer .nav-client-login {
+  display: none;
+}
 /*
 ===============
 Pages
@@ -1171,13 +1125,22 @@ About Page
 }
 
 .about-content-nav {
-  background-color: var(--clr-primary-1);
   padding: 10px 0;
   z-index: 200;
+  background-color: var(--clr-primary-1-clear);
 }
 
 .about-content-nav a {
   color: white;
+}
+
+.about-content-nav a.active {
+  color: var(--clr-primary-1);
+}
+
+.about-content-nav a:hover {
+  box-shadow: none;
+  color: var(--clr-primary-1);
 }
 /*
 ===============
@@ -1341,11 +1304,72 @@ Contact Page
 ===============
 */
 .contact-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 5rem 0;
 }
+
+.contact-page article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-page h1 {
+  font-family: var(--ff-primary);
+  font-size: 40px;
+  margin: 40px 0 50px;
+  width: 100%;
+}
+
+.contact-page form {
+  background-color: white;
+  padding: 2rem;
+}
+
+.contact-page .personal-contact, .contact-page form {
+  width: 48%;
+}
+
+.contact-page .personal-contact .section-center {
+  padding: 0px;
+}
+
+.contact-page .personal-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page .personal-contact .team-info {
+  margin-bottom: 50px;
+  background-color: white;
+  padding: 2rem;
+}
+
+.contact-page .personal-contact .contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page .personal-contact .contact-info a {
+  text-decoration: underline;
+}
+
+.contact-page .personal-contact .contact-info .svg-inline--fa {
+  margin-right: 10px;
+}
+
+.contact-page .personal-contact h4 {
+  margin-bottom: 10px;
+}
+
+.contact-page .personal-contact .title-margin {
+  margin: 0px;
+}
+
+.contact-page .personal-contact .teams-center {
+  flex-direction: column;
+}
+
 .contact-form {
   background: var(--clr-white);
   text-align: center;
@@ -1355,12 +1379,6 @@ Contact Page
   max-width: 35rem;
 }
 
-.contact-form h1 {
-  font-family: var(--ff-secondary);
-  font-weight: 300;
-  font-size: 25px;
-  margin: 40px 0 20px;
-}
 
 .contact-form:hover {
   box-shadow: var(--dark-shadow);
@@ -1370,7 +1388,7 @@ Contact Page
   color: var(--clr-grey-5);
 }
 .form-group {
-  padding: 1rem 1.5rem;
+  padding: 0px;
 }
 .form-control {
   display: block;
@@ -1398,6 +1416,12 @@ Contact Page
   border-bottom-right-radius: var(--radius);
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+}
+
+@media(max-width: 800px){
+  .contact-page .personal-contact, .contact-page form {
+    width: 100%;
+  }
 }
 /*
 ===============

@@ -1,4 +1,7 @@
 import React from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+
 import { Link } from "gatsby"
 const data = [
   {
@@ -12,26 +15,40 @@ const data = [
     url: "/team",
   },
   {
-    id: 2,
+    id: 3,
     text: "services",
     url: "/services",
   },
   {
-    id: 3,
-    text: "media",
-    url: "/media",
-  },
-  {
-    id: 4,
+    id: 5,
     text: "contact",
     url: "/contact",
   },
+  {
+    id: 6,
+    text: "Client Centre",
+    url: "https://rjcs.raymondjames.ca/",
+    isAnchor: true,
+  },
 ]
 
-const tempLinks = data.map(link => {
+// {
+//   id: 4,
+//   text: "media",
+//   url: "/media",
+// },
+
+const tempLinks = data.map((link) => {
   return (
-    <li key={link.id}>
-      <Link activeClassName="active" className={link.url === '/contact/' ? 'contact-cta btn' : ''} to={link.url}>{link.text}</Link>
+    <li key={link.id} className={link.url === '/contact' ? 'contact-li' : 'nav-links-li'}>
+      { !link.isAnchor ?
+        <Link activeClassName="active" className={link.url === '/contact' ? 'contact-cta btn' : ''} to={link.url}>{link.text}</Link>
+        :
+        <a className="nav-client-login btn" target="_blank" href={link.url}>
+          <span className="nav-client-login-text">Client Login</span>
+          <FontAwesomeIcon icon={faUser}/>
+        </a>
+      }
     </li>
   )
 })

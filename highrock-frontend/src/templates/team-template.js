@@ -7,7 +7,7 @@ import BackLink from "../components/BackLink"
 
 const ComponentName = ({data}) => {
   const { description, name, position, image } = data.team;
-  return <Layout>
+  return <Layout indicator>
     <section className="team-template section-padding">
       <BackLink title="All team" page="team"/>
       <div className="section-center-narrow">

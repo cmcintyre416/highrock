@@ -3,12 +3,14 @@ import Title from "./Title"
 import TeamMember from "./TeamMember"
 import { Link } from "gatsby"
 
-const Teams = ({team,title,showLink,list}) => {
+const Teams = ({team,title,showLink,list,contact}) => {
   const [value, setValue] = React.useState(0);
   return (
     <section className="section teams section-center">
       <div className="title-margin">
+        { title &&
         <Title title={title}/>
+        }
       </div>
       <div className="teams-center">
         {
@@ -26,7 +28,7 @@ const Teams = ({team,title,showLink,list}) => {
           </div>
         }
           {team.map((item, index)=>{
-            return <TeamMember activeValue={value} key={item.id} index={index} {...team[index]} listOutAll={list}/>
+            return <TeamMember activeValue={value} contact={contact} key={item.id} index={index} {...team[index]} listOutAll={list}/>
           })}
       </div>
       { showLink &&

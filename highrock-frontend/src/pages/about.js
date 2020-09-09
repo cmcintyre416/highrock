@@ -14,20 +14,20 @@ const About = ({
   },
 }) => {
   const{title,info} = nodes[0];
-  return <Layout>
+  return <Layout indicator>
     <SEO title="about" description="About highrock capital"/>
-    <div id="intro" className="section-center-narrow">
+    <div className="section-center-narrow">
         <Intro data={intro}/>
     </div>
-    <section className="section-color-gray">
+    <div className="about-content">
+    <AboutSubNav/>
+    <section id="intro" className="section-color-gray">
       <div className="about-page section-center-narrow section-padding">
           <article className="about-text">
             <ReactMarkdown source={info}/>
           </article>
       </div>
     </section>
-    <div className="about-content">
-      <AboutSubNav/>
       <section id="history" className="section-center-narrow section-padding">
         <Histories/>
       </section>

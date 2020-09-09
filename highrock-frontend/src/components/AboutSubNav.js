@@ -1,5 +1,5 @@
 import React from "react"
-import PageLinks from "../constants/about-links"
+import {AboutLinks} from "./AboutLinks"
 import Sticky from 'react-sticky-el';
 
 const customStyleObject = {
@@ -12,7 +12,7 @@ const AboutSubNav = () => {
     return <Sticky topOffset={-110} stickyStyle={customStyleObject}>
         <nav className="about-content-nav">
             <div className="nav-center section-center-narrow">
-              <PageLinks styleClass="nav-links"></PageLinks>
+              <AboutLinks styleClass="nav-links"></AboutLinks>
             </div>
         </nav>
       </Sticky>

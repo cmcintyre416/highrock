@@ -8,7 +8,7 @@ import SEO from "../components/SEO"
 const ComponentName = ({data}) => {
   const { content, title, description } = data.blog;
 
-  return <Layout>
+  return <Layout indicator>
     <SEO title={title} description={description}/>
     <section className="blog-post section-center-narrow section-padding">
     <BackLink title="All Posts" page="media"/>

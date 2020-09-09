@@ -5,7 +5,7 @@ import PageLinks from "../constants/links"
 import Sticky from 'react-sticky-el';
 import Indicator from "../components/Indicator"
 
-const Navbar = ({toggleSidebar, navVersion}) => {
+const Navbar = ({toggleSidebar, navVersion, indicator}) => {
     return <nav className={`nav-${navVersion} nav-main`}>
         <Sticky>
           <div className="nav-center">
@@ -13,7 +13,9 @@ const Navbar = ({toggleSidebar, navVersion}) => {
               <a href="/">
               <img src={logo} alt="logo"/>
               </a>
-              <Indicator/>
+              { indicator &&
+                <Indicator/>
+              }
               <button type="button" className="toggle-btn" onClick={toggleSidebar}>
                 <FaAlignRight></FaAlignRight>
               </button>

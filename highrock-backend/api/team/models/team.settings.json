@@ -38,6 +38,14 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "telephone": {
+      "type": "biginteger",
+      "required": true
     }
   }
 }

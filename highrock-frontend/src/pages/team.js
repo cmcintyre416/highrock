@@ -12,7 +12,7 @@ const TeamPage = ({
 }) => {
   const teamIntro = strapiIntroTeam;
   return (
-  <Layout>
+  <Layout indicator>
     <div className="team-page">
       <div className="section-center-narrow">
         <Intro data={teamIntro} slide/>

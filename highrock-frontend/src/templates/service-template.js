@@ -8,7 +8,7 @@ import BackLink from "../components/BackLink"
 const ComponentName = ({data}) => {
   const { title, description, info } = data.services;
 
-  return <Layout>
+  return <Layout indicator>
     <SEO title={title} description={description}/>
     <div className="service-template section-padding section-center-narrow">
     <BackLink title="All services" page="services"/>

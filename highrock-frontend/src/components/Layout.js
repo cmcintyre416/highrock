@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 
-const Layout = ({ children , navVersion}) => {
+const Layout = ({ children , navVersion, indicator}) => {
   const [isOpen, setIsOpen] = React.useState(false)
   const toggleSidebar = () => {
     setIsOpen(!isOpen)
@@ -11,7 +11,7 @@ const Layout = ({ children , navVersion}) => {
 
   return (
     <>
-      <Navbar navVersion={navVersion} toggleSidebar={toggleSidebar}/>
+      <Navbar indicator={indicator} navVersion={navVersion} toggleSidebar={toggleSidebar}/>
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar}/>
       <div className="page-content">
         {children}
