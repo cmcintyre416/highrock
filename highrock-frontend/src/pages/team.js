@@ -20,7 +20,7 @@ const TeamPage = ({
       <div>
       <div className="section-color-gray">
         <section className="section-center-narrow">
-          <Teams team={team} title="Meet your team" list deepLink/>
+          <Teams team={team} title="Meet your team" list deepLink linkTo/>
         </section>
       </div>
       </div>

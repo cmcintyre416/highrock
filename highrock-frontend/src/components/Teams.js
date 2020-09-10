@@ -2,14 +2,20 @@ import React from "react"
 import Title from "./Title"
 import TeamMember from "./TeamMember"
 import { Link } from "gatsby"
+import { motion } from "framer-motion";
 
-const Teams = ({team,title,showLink,list,contact}) => {
+const Teams = ({team,title,showLink,list,contact,linkTo}) => {
   const [value, setValue] = React.useState(0);
   return (
     <section className="section teams section-center">
       <div className="title-margin">
         { title &&
         <Title title={title}/>
+        }
+        { showLink &&
+        <Link to="/team" className="underline-link">
+          All team
+        </Link>
         }
       </div>
       <div className="teams-center">
@@ -27,15 +33,20 @@ const Teams = ({team,title,showLink,list,contact}) => {
             })}
           </div>
         }
-          {team.map((item, index)=>{
-            return <TeamMember activeValue={value} contact={contact} key={item.id} index={index} {...team[index]} listOutAll={list}/>
-          })}
+        {team.map((item, index)=>{
+          return (
+            linkTo == true ? <motion.article whileHover={{ scale: 1.05 }} className="team-info">
+              <Link to={`team/${team[index].slug}`}>
+                <TeamMember activeValue={value} contact={contact} key={item.id} index={index} {...team[index]} listOutAll={list}/>
+              </Link>
+            </motion.article>
+            : 
+            <div className="team-info">
+              <TeamMember activeValue={value} contact={contact} key={item.id} index={index} {...team[index]} listOutAll={list}/>
+            </div>
+            )
+        })}
       </div>
-      { showLink &&
-      <Link to="/team" className="btn center-btn">
-        All team
-      </Link>
-      }
     </section>
   );
 };

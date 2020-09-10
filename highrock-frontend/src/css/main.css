@@ -16,7 +16,7 @@ Variables
   /* --clr-primary-1: hsl(43, 86%, 17%); */
   --clr-primary-1: #333;
   --clr-primary-1-clear: rgba(51, 51, 51, 0.425);
-  --clr-primary-2: hsl(38, 90%, 60%);
+  --clr-primary-2: #e5901b;
   --clr-primary-3: hsl(185, 81%, 29%);
   --clr-primary-4: hsl(184, 77%, 34%);
   --clr-primary-5: hsla(0, 0%, 100%, 0.673);
@@ -66,10 +66,9 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
-  font-size: 0.875rem;
+  font-size: 20px;
   font-weight: 300;
 }
 ul {
@@ -88,18 +87,21 @@ h4 {
 }
 h1 {
   font-size: 3rem;
+  margin: 0 0 1.5rem 0;
 }
 h2 {
   font-size: 2rem;
 }
 h3 {
   font-size: 1.25rem;
+  margin: 1rem 0;
 }
 h4 {
   font-size: 0.875rem;
   font-family: var(--ff-secondary);
 }
 p {
+  font-size: 16px;
   margin-bottom: 1.25rem;
   color: var(--clr-primary-1);
 }
@@ -220,6 +222,10 @@ strong {
   margin-right: auto;
 }
 
+.underline-link {
+  border-bottom: 1px solid var(--clr-primary-1);
+}
+
 .section-title {
   text-align: left;
   text-transform: capitalize;
@@ -235,6 +241,9 @@ a {
 
 .title-margin {
   margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .page-title {
@@ -369,11 +378,19 @@ Navbar
 .toggle-btn:hover {
   color: var(--clr-primary-9);
 }
+
 .nav-links {
   display: none;
   align-items: center;
 }
 
+.nav-links.about-links {
+  display: flex;
+}
+
+.nav-links.about-links li {
+  margin-right: 30px;
+}
 
 
 .active {
@@ -415,22 +432,22 @@ Navbar
   }
 
   .nav-links a.nav-client-login {
-    padding: 0.75rem 0.75rem;
+    padding: 0.75rem 1rem;
     display: flex;
     align-items: center;
+    border: 1px solid var(--clr-primary-2);
+    box-shadow: none;
   }
 
   .nav-links a.nav-client-login .fa-user {
     margin: 3px;
+    color: var(--clr-primary-2);
   }
 
   .nav-client-login-text {
-    overflow: hidden;
-    width: 0px;
-    height: 0px;
-    display: block;
-    margin: 0px;
     line-height: normal;
+    margin-right: 10px;
+    color: var(--clr-primary-2);
   }
   
   .nav-links a:hover {
@@ -440,8 +457,16 @@ Navbar
   .nav-links a.nav-client-login:hover .nav-client-login-text {
     width: auto;
     height: auto;
-    margin-right: 10px;
-    padding-top: 2px;
+    color: white;
+  }
+
+  .nav-links a.nav-client-login:hover .fa-user {
+    color: white;
+  }
+
+  .nav-links a.nav-client-login:hover {
+    box-shadow: none;
+    background-color: var(--clr-primary-2);
   }
 
   .nav-links a.contact-cta {
@@ -482,7 +507,7 @@ Intro
   font-size: 15px;
   letter-spacing: 1px;
   line-height: 1.25;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -502,12 +527,14 @@ Intro
   font-size: 40px;
   letter-spacing: -1px;
   line-height: 50px;
+  font-weight: 400;
 }
 
 .intro .description {
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: -1px;
   color: var(--clr-grey-1);
+  font-family: var(--ff-secondary);
 }
 
 .intro-slide-in {
@@ -774,6 +801,8 @@ Services
 .service p {
   -webkit-transition: var(--transition);
   transition: var(--transition);
+  display: none;
+  align-items: center;
 }
 
 .services-center {
@@ -798,7 +827,7 @@ Services
 .services-center .service-btn {
   color: var(--clr-primary-1);
   position: relative;
-  padding: 20px;
+  padding: 40px;
 }
 
 .services-center .service-icon {
@@ -813,6 +842,7 @@ Services
   margin: 0 20px;
   overflow: hidden;
   text-align: center;
+  font-size: 14px;
 }
 
 .services-center h4 {
@@ -820,6 +850,8 @@ Services
   align-items: center;
   text-align: center;
   justify-content: center;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .service:hover {
@@ -827,8 +859,9 @@ Services
 }
 
 .service:hover p {
+  display: flex;
   max-height: 100%;
-  transition: 0.5s ease;
+  min-height: 130px;
 }
 
 .services-page h2{
@@ -865,14 +898,15 @@ teams
 ===============
 */
 
-.teams-center {
+.teams .teams-center {
   width: 100%;
 }
+
 .btn-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  min-width: 200px;
+  min-width: 250px;
 }
 .team-btn {
   background: transparent;
@@ -888,6 +922,7 @@ teams
   line-height: 1;
   border-bottom: 1px solid transparent;
 }
+
 .team-btn:hover {
   border-bottom: 1px solid var(--clr-primary-9);
   box-shadow: 0 2px var(--clr-primary-9);
@@ -897,18 +932,15 @@ teams
   box-shadow: 0 2px var(--clr-primary-9);
   border-bottom: 1px solid var(--clr-primary-9);
 }
+
 .team-info {
-  /* min-height: 420px; */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-grow: 1;
+  padding: 15px;
 }
 
-.team-info  .gatsby-image-wrapper {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  margin-right: 50px;
-}
 .team-info h3 {
   font-weight: 400;
 }
@@ -922,10 +954,10 @@ teams
   letter-spacing: var(--spacing);
 }
 
-.team-desc p {
-  margin-bottom: 0;
-  color: var(--clr-primary-1);
+.team-desc {
+  min-height: 150px;
 }
+
 .team-icon {
   color: var(--clr-primary-5);
 }
@@ -937,12 +969,7 @@ teams
 }
 
 .team-page .teams .teams-center article {
-  width: 30%;
-}
-
-.team-page .teams .team-info {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
 }
 
 .team-page .teams .team-image {
@@ -950,9 +977,21 @@ teams
   background-color: gray;
   height: 280px;
   margin-bottom: 20px;
+  position: relative;
 }
 
-@media screen and (min-width: 992px) {
+.team-page .teams .team-image .gatsby-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0px;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media screen and (min-width: 778px) {
   .teams-center {
     display: flex;
     flex-direction: row;
@@ -962,6 +1001,7 @@ teams
     flex-direction: column;
     justify-content: flex-start;
     padding-right: 3rem;
+    margin-top: 15px;
   }
   .team-btn {
     margin-bottom: 1rem;
@@ -976,16 +1016,25 @@ teams
 
   .team-page .teams-center .team-info {
     margin-bottom: 4rem;
+    align-items: flex-start;
+  }
+
+  .team-page .teams .teams-center article {
+    width: 30%;
   }
 
   .team-info-text h3 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: var(--clr-primary-9);
   }
 
   .team-info-text h4 {
     font-size: 12px;
     line-height: 20px;
+    margin-bottom: 20px;
+    font-family: var(--ff-secondary);
+    font-weight: 300;
+    text-transform: uppercase;
   }
 
   .team-page .teams-center .team-info .gatsby-image-wrapper {
@@ -994,8 +1043,10 @@ teams
   }
 }
 
-.team-template .team-info{
+.team-template .team-info {
   flex-direction: column;
+  margin: 0px;
+  padding: 0px;
 }
 
 .team-template .team-info .team-info-text {
@@ -1003,15 +1054,21 @@ teams
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 40px;
 }
 
 .team-template .team-info h1 {
   font-size: 35px;
+  font-weight: 500;
+  margin-top: 10px;
 }
 
 .team-template .team-info h2 {
   font-size: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  font-family: var(--ff-secondary);
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .team-template .team-info .team-info-text .team-image, .team-template .team-info .team-info-text .team-desc {
@@ -1022,6 +1079,44 @@ teams
 .team-template .team-info .team-info-text .team-image {
   background: gray;
   height: 500px;
+}
+
+.team-template .team-info .sticky {
+  max-height: 200px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--clr-primary-1);
+  z-index: 201;
+  transition: 0.3s ease-in;
+  box-shadow: 10px 0px 1px rgba(0, 0, 0, 1);
+}
+
+.team-template .team-sticky {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  box-shadow: 0px;
+}
+
+.team-template .team-sticky .team-sticky-contact, .team-template .team-sticky .team-sticky-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-template .team-sticky .team-sticky-contact {
+  align-items: flex-end;
+}
+
+.team-template .team-sticky .team-sticky-contact a {
+  text-decoration: underline;
+  padding: 5px 0;
+}
+
+.team-template .team-sticky .team-sticky-contact .svg-inline--fa {
+  margin-left: 5px;
 }
 
 /*
@@ -1326,8 +1421,12 @@ Contact Page
   padding: 2rem;
 }
 
-.contact-page .personal-contact, .contact-page form {
+.contact-page .personal-contact, .contact-page .form-wrapper {
   width: 48%;
+}
+
+.contact-page .form-wrapper form {
+  width: 100%;
 }
 
 .contact-page .personal-contact .section-center {
@@ -1339,27 +1438,28 @@ Contact Page
   flex-direction: column;
 }
 
-.contact-page .personal-contact .team-info {
-  margin-bottom: 50px;
+.contact-page .personal-contact .teams-center .team-info {
   background-color: white;
   padding: 2rem;
-}
-
-.contact-page .personal-contact .contact-info {
   display: flex;
   flex-direction: column;
 }
 
-.contact-page .personal-contact .contact-info a {
+.contact-page .personal-contact .team-info a {
   text-decoration: underline;
+  margin-right: 20px;
 }
 
-.contact-page .personal-contact .contact-info .svg-inline--fa {
+.contact-page .personal-contact .team-info .svg-inline--fa {
   margin-right: 10px;
 }
 
 .contact-page .personal-contact h4 {
   margin-bottom: 10px;
+}
+
+.contact-page h3 {
+  margin-top: 0px;
 }
 
 .contact-page .personal-contact .title-margin {
@@ -1368,6 +1468,10 @@ Contact Page
 
 .contact-page .personal-contact .teams-center {
   flex-direction: column;
+}
+
+.contact-page .personal-contact .teams-center .team-info {
+  margin-bottom: 40px;
 }
 
 .contact-form {
@@ -1379,7 +1483,6 @@ Contact Page
   max-width: 35rem;
 }
 
-
 .contact-form:hover {
   box-shadow: var(--dark-shadow);
 }
@@ -1387,6 +1490,12 @@ Contact Page
   padding-top: 1.25rem;
   color: var(--clr-grey-5);
 }
+
+.form-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
 .form-group {
   padding: 0px;
 }
@@ -1419,7 +1528,7 @@ Contact Page
 }
 
 @media(max-width: 800px){
-  .contact-page .personal-contact, .contact-page form {
+  .contact-page .personal-contact, .contact-page .form-wrapper {
     width: 100%;
   }
 }
@@ -1477,10 +1586,8 @@ Blog Template
 /* PROGRESS ICON */
 .progress-icon {
   position: absolute;
-  right: 30px;
+  right: 0px;
   top: calc(100% + 50px);
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
 }
-
-/* Parallax */

@@ -15,16 +15,18 @@ const contact = ({
         <div className="personal-contact">
           <Teams team={team} list contact/>
         </div>
-        <form action="" method="POST">
-          <h3>Form</h3>
-          <div className="form-group">
-            <input type="text" placeholder="name" name="name" className="form-control"/>
-            <input type="email" placeholder="email" name="email" className="form-control"/>
-            <input type="tel" placeholder="Telephone" name="telephone" className="form-control"/>
-            <textarea name="message" placeholder="message" className="form-control" rows="5"></textarea>
-            <button type="submit" className="submit-btn btn">Submit</button>
-          </div>
-        </form>
+        <div className="form-wrapper">
+          <form action="" method="POST">
+            <h3>Form</h3>
+            <div className="form-group">
+              <input type="text" placeholder="name" name="name" className="form-control"/>
+              <input type="email" placeholder="email" name="email" className="form-control"/>
+              <input type="tel" placeholder="Telephone" name="telephone" className="form-control"/>
+              <textarea name="message" placeholder="message" className="form-control" rows="5"></textarea>
+              <button type="submit" className="submit-btn btn">Submit</button>
+            </div>
+          </form>
+        </div>
       </article>
     </section>
   </Layout>

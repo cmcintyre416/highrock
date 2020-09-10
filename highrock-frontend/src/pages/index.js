@@ -17,8 +17,8 @@ export default ({data}) => {
       <SEO title="Home" description="This is the home page for Highrock capital."/>
       <Hero/>
       <div className="section-center-narrow section-padding">
-          <ServiceList/>
-          <Teams team={team} title="Meet the team" showLink/>
+          <ServiceList includeLink includeTitle/>
+          <Teams team={team} title="Meet the team" showLink linkTo/>
           {/* <Blogs blogs={blogs} title="latest blog posts" showLink/> */}
       </div>
     </div>

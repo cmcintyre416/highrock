@@ -29,15 +29,12 @@ const About = ({
       </div>
     </section>
       <section id="history" className="section-center-narrow section-padding">
-        <Histories/>
       </section>
       <section id="difference" className="section-center-narrow section-padding">
         What makes us different
-        <Histories/>
       </section>
       <section id="other" className="section-center-narrow section-padding">
         Another Section
-        <Histories/>
       </section>
     </div>
   </Layout>

@@ -17,10 +17,10 @@ const Indicator = () => {
 
     return (
         <>
-            <svg className="progress-icon" viewBox="0 0 60 60">
+            <svg className="progress-icon" viewBox="0 0 50 50">
                 <motion.path
                     fill="none"
-                    strokeWidth="5"
+                    strokeWidth="4"
                     stroke="#e78f19"
                     strokeDasharray="0 1"
                     d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
@@ -34,7 +34,7 @@ const Indicator = () => {
                 />
                 <motion.path
                     fill="none"
-                    strokeWidth="5"
+                    strokeWidth="4"
                     stroke="#e78f19"
                     d="M14,26 L 22,33 L 35,16"
                     initial={false}

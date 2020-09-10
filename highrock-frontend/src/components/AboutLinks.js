@@ -32,9 +32,9 @@ export const AboutLinks = () => {
     scrollTo(link.url, 'center');
   };
 
-  return <ul className="page-links nav-links">
+  return <ul className="page-links nav-links about-links">
     {data.map((link, index) => {
-      return <li key={link.id} className={` testing  ${link.url === '/contact/' ? 'contact-cta btn' : ''}`}>
+      return <li key={link.id} className={`${link.url === '/contact/' ? 'contact-cta btn' : ''}`}>
           <Link onClick={(e)=>{
             e.preventDefault();
             navigation(link);

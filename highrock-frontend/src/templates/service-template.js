@@ -13,7 +13,7 @@ const ComponentName = ({data}) => {
     <div className="service-template section-padding section-center-narrow">
     <BackLink title="All services" page="services"/>
     <h1>{title}</h1>
-    <section className="service">
+    <section className="service-template-section">
       <div className="section-padding">
         <article className="service-content">
           <ReactMarkdown source={info}/>
