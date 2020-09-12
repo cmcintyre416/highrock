@@ -1219,6 +1219,11 @@ About Page
   position: relative;
 }
 
+.about-content h2 {
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
 .about-content-nav {
   padding: 10px 0;
   z-index: 200;
@@ -1590,4 +1595,25 @@ Blog Template
   top: calc(100% + 50px);
   width: 75px;
   height: 75px;
+}
+
+/* FAQ */
+.accordion:first-of-type {
+  margin-top: 40px;
+}
+
+.accordion:last-of-type {
+  margin-bottom: 40px;
+}
+
+.accordion-question {
+  font-family: var(--ff-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+}
+
+.accordion-answer {
+  font-family: var(--ff-secondary) !important;
+  font-weight: 300 !important;
+  font-size: 15px !important;
 }

@@ -44,7 +44,7 @@ const Teams = ({team,title,showLink,list,contact,linkTo}) => {
             <div className="team-info">
               <TeamMember activeValue={value} contact={contact} key={item.id} index={index} {...team[index]} listOutAll={list}/>
             </div>
-            )
+          )
         })}
       </div>
     </section>

@@ -18,7 +18,7 @@ export default ({data}) => {
       <Hero/>
       <div className="section-center-narrow section-padding">
           <ServiceList includeLink includeTitle/>
-          <Teams team={team} title="Meet the team" showLink linkTo/>
+          <Teams team={team} title="Meet the team" showLink listOutAll/>
           {/* <Blogs blogs={blogs} title="latest blog posts" showLink/> */}
       </div>
     </div>
