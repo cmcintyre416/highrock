@@ -18,7 +18,7 @@ const About = ({
 }) => {
   const{title,info} = nodes[0];
   console.log(faqs);
-  return <Layout indicator>
+  return <Layout>
     <SEO title="about" description="About highrock capital"/>
     <div className="section-center-narrow">
         <Intro data={intro}/>

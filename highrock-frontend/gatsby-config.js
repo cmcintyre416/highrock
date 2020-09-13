@@ -6,11 +6,11 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Highrock Capital Site",
-    description: "This is the highrock capital site.",
-    author: "Highrock",
-    twitterUsername: "",
-    image: "",
+    title: "High Rock",
+    description: "This is the highrock capital webstite.",
+    author: "High Rock Capital Management",
+    twitterUsername: "https://twitter.com/highrockcapital?lang=en",
+    image: `${__dirname}/src/assets/logo.png`,
     siteUrl: "https://testing-strapi-gatsby-build.netlify.app",
   },
   plugins: [
@@ -31,27 +31,10 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `http://localhost:1337`,
-        queryLimit: 1000, // Default to 100
-        //   contentTypes : `jobs`, `projects`, `blogs`,
-        //   singleType : `about`
-        //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
+        queryLimit: 1000,
         contentTypes: [`teams`, `services`, `blogs`, `histories`, `about-faqs`, `differences`],
         singleTypes: [`herobanner-home`, `about`, `intro-team`, `intro-service`, `intro-about`],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Roboto`,
-    //         variants: [`400`, `700`],
-    //       },
-    //       {
-    //         family: `Open Sans`,
-    //       },
-    //     ],
-    //   },
-    // },
   ],
 }

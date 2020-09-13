@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Teams from "../components/Teams"
+import SEO from "../components/SEO"
 
 const contact = ({
     data: {
@@ -9,6 +10,7 @@ const contact = ({
     },
   }) => {
   return <Layout>
+    <SEO title="contact" description="Contact High Rock Capital."/>
     <section className="contact-page section-padding">
       <article className="section-center-narrow">
         <h1>Contact us</h1>

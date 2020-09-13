@@ -223,20 +223,17 @@ strong {
 }
 
 .underline-link {
-  border-bottom: 1px solid var(--clr-primary-1);
+  border-bottom: 1px solid var(--clr-primary-2);
 }
 
 .section-title {
   text-align: left;
   text-transform: capitalize;
+  margin-bottom: 2rem;
 }
 
 a {
   color: var(--clr-primary-1);
-}
-
-.section-title h2 {
-  margin: 0;
 }
 
 .title-margin {
@@ -289,14 +286,16 @@ a {
 .back-link a {
   color: var(--clr-primary-1);
   font-family: var(--ff-secondary);
+  text-transform: uppercase;
 }
 
 .back-link a:before {
-  border-bottom: 1px solid var(--clr-grey-1);
+  background: linear-gradient(135deg, #e78f19 0%, #fda085 100%);
   content: "";
   display: inline-block;
   vertical-align: middle;
   width: 15px;
+  height: 2px;
   margin-left: 1px;
   margin-right: 10px;
 }
@@ -309,8 +308,8 @@ a {
   top: calc(50% - 1px);
   height: 5px;
   transform: rotate(-45deg);
-  border-left: 1px solid var(--clr-primary-1);
-  border-top: 1px solid var(--clr-primary-1);
+  border-left: 2px solid var(--clr-primary-2);
+  border-top: 2px solid var(--clr-primary-2);
 }
 /*
 =============== 
@@ -466,7 +465,7 @@ Navbar
 
   .nav-links a.nav-client-login:hover {
     box-shadow: none;
-    background-color: var(--clr-primary-2);
+    background: linear-gradient(135deg, #e78f19 0%, #fda085 100%);
   }
 
   .nav-links a.contact-cta {
@@ -513,8 +512,9 @@ Intro
 }
 
 .intro .subTitle:before {
-  border-bottom: 1px solid var(--clr-grey-1);
+  background: linear-gradient(135deg, #e78f19 0%, #fda085 100%);
   content: "";
+  height: 2px;
   display: inline-block;
   margin-left: 10px;
   vertical-align: middle;
@@ -717,6 +717,11 @@ Hero
   margin-top: 1.25rem;
 }
 
+.hero .btn:hover {
+  background: linear-gradient(135deg, #e78f19 0%, #fda085 100%);
+  border: 1px solid #e78f19;
+}
+
 .hero h1 {
   position: relative;
   display: flex;
@@ -741,7 +746,7 @@ Hero
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: var(--clr-primary-2);
+  background: linear-gradient(135deg, #e78f19 0%, #fda085 100%);
 }
 
 @media screen and (min-width: 992px) {
@@ -838,8 +843,8 @@ Services
 .service-btn p {
   height: auto;
   width: auto;
-  max-height: 0px;
-  margin: 0 20px;
+  transform: scale(0);
+  margin: 20px;
   overflow: hidden;
   text-align: center;
   font-size: 14px;
@@ -855,13 +860,18 @@ Services
 }
 
 .service:hover {
-  background-color: var(--clr-grey-2);
+  background: linear-gradient(135deg, #e78e19c0 0%, #fd9f85a9 100%);
 }
 
 .service:hover p {
   display: flex;
-  max-height: 100%;
-  min-height: 130px;
+  transform: scale(1);
+  color: white;
+}
+
+.service:hover h4 {
+  font-weight: 700;
+  color: white;
 }
 
 .services-page h2{
@@ -1221,7 +1231,7 @@ About Page
 
 .about-content h2 {
   margin-bottom: 40px;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .about-content-nav {
@@ -1256,16 +1266,18 @@ History
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  font-weight: 300;
+  font-family: var(--ff-secondary);
 }
 
 .history-title span {
   margin: 0 10px;
 }
 
-.history-title div, .history-title h2, .history-title h4{
+.history-title div, .history-title h2, .history-title h4, .history-title span{
   margin-bottom: 0px;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 300;
   font-family: var(--ff-secondary);
   text-transform: uppercase;
   line-height: 1.25;
@@ -1295,6 +1307,11 @@ History
 
 .history-text {
   width: 50%;
+}
+
+.history-text h4 {
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .history-photo {
@@ -1339,6 +1356,7 @@ History
 
 .control-panel .control-circle.active {
   background-color: var(--clr-primary-1);
+  background-color:var(--clr-primary-1-clear);
   box-shadow: none;
 }
 
@@ -1386,7 +1404,7 @@ History
 
 .next:hover,
 .prev:hover {
-  background: var(--clr-primary-1-clear);
+  background: linear-gradient(135deg, #e78f19 0%, #fda085 100%);
 }
 
 .next {
@@ -1448,6 +1466,17 @@ Contact Page
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.contact-page .personal-contact .teams-center .team-info::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #e78f19 0%, #fda085 100%);
 }
 
 .contact-page .personal-contact .team-info a {

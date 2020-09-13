@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Intro from "../components/Intro"
 import ServiceList from "../components/ServiceList"
+import SEO from "../components/SEO"
 
 const query = graphql`
 {
@@ -18,6 +19,7 @@ const Services = () => {
   const data = useStaticQuery(query);
   const { strapiIntroService } = data;
   return <Layout>
+    <SEO title="Services" description="High Rock offers the following services to their customers."/>
     <div className="section-center-narrow">
       <Intro data={strapiIntroService}/>
     </div>

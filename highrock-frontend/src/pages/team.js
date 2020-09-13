@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Teams from "../components/Teams"
 import Intro from "../components/Intro"
+import SEO from "../components/SEO"
 
 const TeamPage = ({
   data: {
@@ -13,6 +14,7 @@ const TeamPage = ({
   const teamIntro = strapiIntroTeam;
   return (
   <Layout indicator>
+    <SEO title="Team" description="Meet and learn about the High Rock Capital team."/>
     <div className="team-page">
       <div className="section-center-narrow">
         <Intro data={teamIntro} slide/>
