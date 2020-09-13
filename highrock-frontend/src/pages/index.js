@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import ServiceList from "../components/ServiceList"
-import Teams from "../components/Teams"
 import SEO from "../components/SEO"
 import Title from "../components/Title"
 import Differences from "../components/Differences"
@@ -44,6 +43,13 @@ export const query = graphql`
       position
       teaser
       slug
+      image {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   }
   allStrapiBlogs(sort: {fields: date, order: DESC}, limit: 3) {

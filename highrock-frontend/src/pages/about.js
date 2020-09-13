@@ -8,16 +8,17 @@ import Histories from "../components/Histories"
 import AboutSubNav from "../components/AboutSubNav"
 import Accordion from "../components/Accordion"
 import Differences from "../components/Differences"
+import WhatWeDo from "../components/WhatWeDo"
 
 const About = ({
   data: {
     about: { nodes },
     intro,
-    allStrapiAboutFaqs: { nodes: faqs }
+    allStrapiAboutFaqs: { nodes: faqs },
+    allStrapiWhatWeDos: { nodes: weDo },
   },
 }) => {
   const{title,info} = nodes[0];
-  console.log(faqs);
   return <Layout>
     <SEO title="about" description="About highrock capital"/>
     <div className="section-center-narrow">
@@ -42,6 +43,7 @@ const About = ({
       </section>
       <section id="what-we-do" className="section-center-narrow section-padding">
       <h2>What we do</h2>
+      <WhatWeDo weDo={weDo}/>
       </section>
       <section id="faq" className="section-center-narrow section-padding">
       <h2>Frequently asked questions</h2>
@@ -71,6 +73,20 @@ export const query = graphql`
         id
         question
         answer
+      }
+    }
+    allStrapiWhatWeDos {
+      nodes {
+        id
+        title
+        description
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

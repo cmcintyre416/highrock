@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "gatsby"
+import Image from "gatsby-image"
 import { animated, useSpring, useSprings } from "react-spring";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPortrait } from '@fortawesome/free-solid-svg-icons'
 import styled from "styled-components";
 
 const ComponentContainer = styled('div')`
@@ -16,11 +19,19 @@ const GridContainer = styled('div')`
 `;
 
 const AnimatedItem = styled(animated('div'))`
+  position: relative;
   cursor: pointer;
   width: 33.3333%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Nunito', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  svg {
+    margin-right: 10px;
+  }
 `;
 
 const AnimatedWrapper = styled(animated('div'))`
@@ -36,8 +47,20 @@ const AnimatedWrapper = styled(animated('div'))`
     width: 100%;
   }
 
+  h4 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
   p, h4 {
     text-align: left;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .position {
+    text-transform: uppercase;
+    margin-bottom: 20px;
   }
 
   &:before {
@@ -101,7 +124,7 @@ const TeamsBox = ({team}) => {
             <h4>
               {index !== null && team[index].name}
             </h4>
-            <p>
+            <p className="position">
               {index !== null && team[index].position}
             </p>
             <p>
@@ -120,7 +143,8 @@ const TeamsBox = ({team}) => {
             }}
             style={props}
           >
-          {props.name}
+            <FontAwesomeIcon icon={faPortrait}/>
+            {team[i].name}
           </AnimatedItem>
         ))}
       </GridContainer>
