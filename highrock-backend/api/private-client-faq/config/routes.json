@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/private-client-faqs",
+      "handler": "private-client-faq.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/private-client-faqs/count",
+      "handler": "private-client-faq.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/private-client-faqs/:id",
+      "handler": "private-client-faq.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/private-client-faqs",
+      "handler": "private-client-faq.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/private-client-faqs/:id",
+      "handler": "private-client-faq.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/private-client-faqs/:id",
+      "handler": "private-client-faq.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

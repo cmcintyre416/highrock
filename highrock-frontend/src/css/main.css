@@ -68,7 +68,7 @@ body {
   font-family: var(--ff-secondary);
   color: var(--clr-grey-1);
   line-height: 1.5;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 300;
 }
 ul {
@@ -99,6 +99,7 @@ h3 {
 h4 {
   font-size: 0.875rem;
   font-family: var(--ff-secondary);
+  text-transform: uppercase;
 }
 p {
   font-size: 16px;
@@ -229,7 +230,7 @@ strong {
 .section-title {
   text-align: left;
   text-transform: capitalize;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 a {
@@ -589,7 +590,7 @@ Sidebar
   font-size: 2.5rem;
   background: transparent;
   border-color: transparent;
-  color: var(--clr-red-dark);
+  color: var(--clr-primary-1);
   cursor: pointer;
 }
 @media screen and (min-width: 992px) {
@@ -947,8 +948,14 @@ teams
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-grow: 1;
-  padding: 15px;
+}
+
+.team-info a {
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  padding: 20px;
 }
 
 .team-info h3 {
@@ -983,11 +990,12 @@ teams
 }
 
 .team-page .teams .team-image {
-  width: 100%;
+  width: calc(100% + 40px);
   background-color: gray;
-  height: 280px;
-  margin-bottom: 20px;
+  height: 400px;
   position: relative;
+  margin: -20px -20px 0px -20px;
+  overflow: hidden;
 }
 
 .team-page .teams .team-image .gatsby-image-wrapper {
@@ -1030,7 +1038,7 @@ teams
   }
 
   .team-page .teams .teams-center article {
-    width: 30%;
+    width: 32%;
   }
 
   .team-info-text h3 {
@@ -1515,6 +1523,16 @@ Contact Page
   transition: var(--transition);
   width: 90vw;
   max-width: 35rem;
+}
+
+.contact-info {
+  display: flex;
+  width: 100%;
+}
+
+.contact-info a {
+  padding: 0px;
+  box-shadow: none;
 }
 
 .contact-form:hover {

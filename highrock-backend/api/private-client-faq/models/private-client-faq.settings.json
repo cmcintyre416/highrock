@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "private_client_faqs",
+  "info": {
+    "name": "Private Client Faq"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

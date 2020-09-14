@@ -1,28 +1,30 @@
 import React, { useState } from "react";
-import { Link } from "gatsby"
-import Image from "gatsby-image"
+import { Link } from "gatsby";
 import { animated, useSpring, useSprings } from "react-spring";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPortrait } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPortrait } from '@fortawesome/free-solid-svg-icons';
 import styled from "styled-components";
 
-const ComponentContainer = styled('div')`
+import { Container } from "./ui/atoms/container";
+import { Flex } from "./ui/atoms/flex";
+import { Box } from "./ui/atoms/box";
+
+const ComponentContainer = styled(Container)`
   box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
   border-radius: 4px;
   overflow: hidden;
+  padding: 0px;
 `;
 
-const GridContainer = styled('div')`
-  display: flex;
+const GridContainer = styled(Flex)`
   flex-direction: row;
   border-radius: 4px;
 `;
 
-const AnimatedItem = styled(animated('div'))`
+const AnimatedItem = styled(animated(Flex))`
   position: relative;
   cursor: pointer;
-  width: 33.3333%;
-  display: flex;
+  width: 33.33%;
   justify-content: center;
   align-items: center;
   font-family: 'Nunito', sans-serif;
@@ -34,9 +36,8 @@ const AnimatedItem = styled(animated('div'))`
   }
 `;
 
-const AnimatedWrapper = styled(animated('div'))`
+const AnimatedWrapper = styled(animated(Flex))`
   cursor: pointer;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -74,9 +75,8 @@ const AnimatedWrapper = styled(animated('div'))`
 }
 `;
 
-
-const AnimatedBox = styled(animated('div'))`
-`;
+const AnimatedBox = styled(animated(Box))``;
+AnimatedBox.defaultProps = {};
 
 const TeamsBox = ({team}) => {
   const [index, setIndex] = useState(null);
@@ -84,13 +84,9 @@ const TeamsBox = ({team}) => {
   const springs = useSprings(
     team.length,
     team.map((item, i) => ({
-      name: item.name,
-      position: item.position,
-      teaser: item.teaser,
-      slug: item.slug,
-      background: '#3f4243',
-      color: 'white',
-      opacity: (index === null) | (i === index) ? 1 : 0.6,
+      background: (index === null) | (i === index) ? '#3f4243' : 'white',
+      color: (index === null) | (i === index) ? 'white' : '#3f4243',
+      opacity: 1,
       height: index === null ? 120 : 60,
       from: {
         opacity: 0,
@@ -103,21 +99,15 @@ const TeamsBox = ({team}) => {
     from: { height: 0, opacity: 0 }
   }));
 
-  const onItemClick = i => {
-    const { name, position, teaser, slug} = team[i];
+  const onItemClick = () => {
     setSpringProps({
-      name,
-      position,
-      teaser,
-      slug,
       height: 400,
       width: '100%',
       opacity: 1
     });
   };
 
-  return (
-    <ComponentContainer>
+  return <ComponentContainer>
       <AnimatedWrapper style={springProps}>
         <AnimatedBox>{springProps.z}</AnimatedBox>
           <div>
@@ -149,7 +139,6 @@ const TeamsBox = ({team}) => {
         ))}
       </GridContainer>
     </ComponentContainer>
-  );
 }
 
 export default TeamsBox;

@@ -8,7 +8,7 @@ import Histories from "../components/Histories"
 import AboutSubNav from "../components/AboutSubNav"
 import Accordion from "../components/Accordion"
 import Differences from "../components/Differences"
-import WhatWeDo from "../components/WhatWeDo"
+import ExpandinImageComponent from "../components/ExpandinImageComponent"
 
 const About = ({
   data: {
@@ -37,15 +37,15 @@ const About = ({
       <h2>Our History</h2>
       <Histories/>
       </section>
-      <section id="difference" className="section-center-narrow section-padding">
+      <section id="difference" className="section-center-narrow">
       <h2>What makes us different</h2>
       <Differences/>
       </section>
       <section id="what-we-do" className="section-center-narrow section-padding">
       <h2>What we do</h2>
-      <WhatWeDo weDo={weDo}/>
+      <ExpandinImageComponent info={weDo}/>
       </section>
-      <section id="faq" className="section-center-narrow section-padding">
+      <section id="faq" className="section-center-narrow">
       <h2>Frequently asked questions</h2>
         { faqs.map( faq => { 
           return <Accordion faq={faq}/>

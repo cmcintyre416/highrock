@@ -32,7 +32,7 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000,
-        contentTypes: [`teams`, `services`, `blogs`, `histories`, `about-faqs`, `differences`, `what-we-dos`],
+        contentTypes: [`teams`, `services`, `blogs`, `histories`, `about-faqs`, `differences`, `what-we-dos`, `private-client-faqs`],
         singleTypes: [`herobanner-home`, `about`, `intro-team`, `intro-service`, `intro-about`],
       },
     },
