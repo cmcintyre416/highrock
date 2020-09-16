@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "gatsby-image"
+import { Link } from "gatsby"
 import { animated, useSprings } from "react-spring";
 
 import styled from "styled-components";
@@ -23,10 +24,11 @@ const AnimatedItemOuter = styled(animated(Flex))`
     align-items: center;
     flex-direction: column;
     width: 48%;
-    cursor: pointer;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
     border-radius: 4px;
     overflow: hidden;
+    height: 550px;
+    margin-bottom: 20px;
 
         .gatsby-image-wrapper {
             position: absolute;
@@ -37,6 +39,12 @@ const AnimatedItemOuter = styled(animated(Flex))`
             transform: translate(-50%, -50%);
             right: 0;
             z-index: -1;
+        }
+
+        @media(max-width: 778px){
+            width: 100%;
+            height: auto;
+            justify-content: flex-start;
         }
     `;
     
@@ -50,6 +58,7 @@ const AnimatedItemOuter = styled(animated(Flex))`
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    height: 550px;
 
         &:after {
             content: '';    
@@ -60,15 +69,17 @@ const AnimatedItemOuter = styled(animated(Flex))`
             right: 0px;
             bottom: -3px;
         }
+
+        @media(max-width: 778px){
+            width: 100%;
+            height: auto;
+
+            &:after {
+                display: none;
+            }
+        }
     `;
     
-    AnimatedItemOuter.defaultProps = {
-        height: [400, null, 550]
-    };
-    
-    AnimatedItem.defaultProps = {
-        height: [400, null, 550]
-    };
 
 const TitleWrapper = styled(animated(Flex))`
     color: white;
@@ -85,6 +96,10 @@ const TitleWrapper = styled(animated(Flex))`
     position: absolute;
     top: 0;
     left: 0;
+
+    @media(max-width: 778px){
+       display: none;
+    }
 `;
 
 const TextWrapper = styled(animated(Flex))`
@@ -95,16 +110,34 @@ const TextWrapper = styled(animated(Flex))`
   height: 100%;
   background: 'white';
   font-size: 16px;
+
+  @media(max-width: 778px){
+    height: 100% !important;
+ }
 `;
 
 
 const AnimatedBox = styled(animated(Box))`
+    cursor: initial;
+
     h3 {
         text-transform: uppercase;
         font-family: 'Nunito', sans-serif;
         font-weight: 500;
         font-size: 16px;
+        line-height: 22px;
     }
+
+    a {
+        text-decoration: underline;
+        cursor: pointor;
+    }
+
+    @media(max-width: 778px){
+        opacity: 1 !important;
+        transfrorm:translate(0px);
+        padding: 40px;
+     }
 `;
 AnimatedBox.defaultProps = {};
 
@@ -158,9 +191,11 @@ const ExpandingImageComponent = ({info}) => {
                 </AnimatedItem>
                 <TextWrapper style={{ height: textHeight }}>
                 <AnimatedBox style={{ opacity: textOpacity }} p={2}>
-                    <h3>
-                        {info[i].title}
-                    </h3>
+                    <Link to={info[i].urls}>
+                        <h3>
+                            {info[i].title}
+                        </h3>
+                    </Link>
                     {info[i].description}
                 </AnimatedBox>
                 </TextWrapper>

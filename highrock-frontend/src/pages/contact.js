@@ -3,6 +3,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Teams from "../components/Teams"
 import SEO from "../components/SEO"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBuilding, faPhone, faMapPin } from '@fortawesome/free-solid-svg-icons'
+
 
 const contact = ({
     data: {
@@ -19,7 +22,7 @@ const contact = ({
         </div>
         <div className="form-wrapper">
           <form action="" method="POST">
-            <h3>Form</h3>
+            <h2>Form</h2>
             <div className="form-group">
               <input type="text" placeholder="name" name="name" className="form-control"/>
               <input type="email" placeholder="email" name="email" className="form-control"/>
@@ -29,6 +32,16 @@ const contact = ({
             </div>
           </form>
         </div>
+          <div className="office-wrapper">
+            <h2><span aria-hidden="true"><FontAwesomeIcon icon={faBuilding}/> </span>Office</h2>
+              <p>
+              <FontAwesomeIcon icon={faMapPin}/> 1 Toronto St., Suite 210, PO Box 4</p>
+              <p className="office-contact-padding">Toronto, Ont.</p>
+              <p className="office-contact-padding">M5C 2V6</p>
+              <a href="tel:1-866-697-6928">
+              <FontAwesomeIcon icon={faPhone}/> 1-866-697-6928
+              </a>
+          </div>
       </article>
     </section>
   </Layout>

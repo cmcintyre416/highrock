@@ -37,8 +37,9 @@ const ComponentName = ({data}) => {
             </div>
           </Sticky>
           <div className="team-info-text">
-            <div className="team-image"></div>
-            {/* <Image fluid={image.childImageSharp.fluid}/> */}
+            <div className="team-image">
+              <Image fluid={image.childImageSharp.fluid}/>
+            </div>
             <ReactMarkdown className="team-desc">{description}</ReactMarkdown>
           </div>
         </article>

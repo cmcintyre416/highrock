@@ -23,7 +23,7 @@ const Hero = () => {
     <div className="section-center-narrow hero-center">
       <article className="hero-image"></article>
       <div>
-        <h1>{herobanner.title}<div className="secondTitle">{herobanner.secondTitle}<span></span></div></h1>
+        <h1>{herobanner.title}<div className="secondTitle">{herobanner.secondTitle}</div></h1>
         <h4 style={{visibility:'hidden'}}>{herobanner.subTitle}</h4>
         <Link className="btn" to={herobanner.ctaLink}>
           {herobanner.ctaText}

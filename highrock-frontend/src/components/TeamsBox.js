@@ -19,6 +19,11 @@ const ComponentContainer = styled(Container)`
 const GridContainer = styled(Flex)`
   flex-direction: row;
   border-radius: 4px;
+
+  @media(max-width: 992px){
+    flex-direction: column;
+  } 
+
 `;
 
 const AnimatedItem = styled(animated(Flex))`
@@ -34,6 +39,10 @@ const AnimatedItem = styled(animated(Flex))`
   svg {
     margin-right: 10px;
   }
+
+  @media(max-width: 992px){
+    width: 100%;
+  } 
 `;
 
 const AnimatedWrapper = styled(animated(Flex))`
@@ -73,6 +82,11 @@ const AnimatedWrapper = styled(animated(Flex))`
     right: 0px;
     top: 0px;
 }
+
+@media(max-width: 992px){
+  height: auto !important;
+} 
+
 `;
 
 const AnimatedBox = styled(animated(Box))``;

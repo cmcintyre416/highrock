@@ -80,6 +80,7 @@ export const query = graphql`
         id
         title
         description
+        url
         image {
           childImageSharp {
             fluid {

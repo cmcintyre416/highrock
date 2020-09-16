@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { useSpring, animated } from 'react-spring';
 import styled from "styled-components";
 
-const ServicesContainer = styled('div')`
+const ServicesContainer = styled.div`
 
 .row {
   display: flex;

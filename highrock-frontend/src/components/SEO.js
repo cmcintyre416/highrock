@@ -19,7 +19,7 @@ const query = graphql`
 `
 const SEO = ({title, description}) => {
   const {site} = useStaticQuery(query);
-  const {siteDesc,siteTitle,siteUrl,image,twitteUsername} = site.siteMetadata
+  const {siteDesc,siteTitle,siteUrl,image,twitterUsername} = site.siteMetadata
 
   const fixedTitle = title.charAt(0).toUpperCase() + title.slice(1);
 
