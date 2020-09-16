@@ -171,7 +171,7 @@ const Differences = () => {
     return (
       <>
         <Container style={{ ...rest }} onClick={() => set(open => !open)}>
-            <div class="top-wrapper">
+            <div className="top-wrapper">
             <h3>The High Rock difference</h3>
             <p><FontAwesomeIcon icon={faMousePointer}/> learn more</p>
             </div>

@@ -22,6 +22,13 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: '#e5901a',
+        showSpinner: false,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,

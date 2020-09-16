@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const data = [
@@ -38,12 +37,11 @@ export const AboutLinks = () => {
   };
 
   return <ul className="page-links nav-links about-links">
-    {data.map((link, index) => {
-      return <li key={link.id} className={`${link.url === '/contact/' ? 'contact-cta btn' : ''}`}>
-          <Link onClick={(e)=>{
-            e.preventDefault();
-            navigation(link);
-          }}>{link.text}</Link>
+    { data.map((link, index) => {
+      return <li key={index} className={`${link.url === '/contact/' ? 'contact-cta btn' : ''}`} onClick={(e)=>{
+        e.preventDefault();
+        navigation(link)}}>
+          {link.text}
         </li>
     })}
   </ul>

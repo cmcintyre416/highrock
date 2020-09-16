@@ -67,7 +67,7 @@ const AnimatedItemOuter = styled(animated(Flex))`
             background: linear-gradient(135deg, #e78f19 0%, #fda085 100%);
             left: 0px;
             right: 0px;
-            bottom: -3px;
+            bottom: -4px;
         }
 
         @media(max-width: 778px){
@@ -191,7 +191,7 @@ const ExpandingImageComponent = ({info}) => {
                 </AnimatedItem>
                 <TextWrapper style={{ height: textHeight }}>
                 <AnimatedBox style={{ opacity: textOpacity }} p={2}>
-                    <Link to={info[i].urls}>
+                    <Link to={info[i].url}>
                         <h3>
                             {info[i].title}
                         </h3>

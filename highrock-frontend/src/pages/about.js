@@ -47,8 +47,8 @@ const About = ({
       </section>
       <section id="faq" className="section-center-narrow">
       <h2>Frequently asked questions</h2>
-        { faqs.map( faq => { 
-          return <Accordion faq={faq}/>
+        { faqs.map((faq, i )=> { 
+          return <Accordion key={i} faq={faq}/>
         })}
       </section>
     </div>
